@@ -1,0 +1,150 @@
+:root {
+  font-family: Arial, sans-serif;
+  color-scheme: light;
+  --background: #f4f6f9;
+  --surface: #ffffff;
+  --text: #222222;
+  --border: #dddddd;
+  --input: #ffffff;
+  --note: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #171717;
+  --surface: #242424;
+  --text: #f5f5f5;
+  --border: #444444;
+  --input: #303030;
+  --note: #303030;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+}
+
+.app {
+  width: min(600px, 92%);
+  margin: 50px auto;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  margin: 0;
+}
+
+.theme-button {
+  background: #555555;
+  color: white;
+}
+
+.add-note {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.add-note input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  color: var(--text);
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline-offset: 2px;
+}
+
+.add-button {
+  background: #2563eb;
+  color: white;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  background: var(--note);
+  color: var(--text);
+}
+
+.note-item p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.delete-button {
+  flex-shrink: 0;
+  background: #dc2626;
+  color: white;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 20px;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 450px) {
+  .app {
+    margin: 20px auto;
+    padding: 16px;
+  }
+
+  .add-note {
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
